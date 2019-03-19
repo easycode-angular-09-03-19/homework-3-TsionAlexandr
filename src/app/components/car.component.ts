@@ -16,10 +16,10 @@ export class CarComponent implements Car {
 	public amountOfFuel: number = 100;
 	
 	public carInfo: string[] = [
-		'Цвет - оранжевый',
-        'Максимальная скорость - 320 Км/ч',
-        'Объем двигателя - 6 Литров',
-        'Год выпуска - 2010'
+		  'Цвет - оранжевый',
+      'Максимальная скорость - 320 Км/ч',
+      'Объем двигателя - 6 Литров',
+      'Год выпуска - 2010'
 	];
 	
 	protected _fuel: string;
@@ -38,12 +38,12 @@ export class CarComponent implements Car {
 			this.mileage += conventionalUnit;
 			this.amountOfFuel -= conventionalUnit;
 			this._distance = '';
-        }
+    }
 	}
 
 	public refuel(_addFuel: string): void {
 
-        let reFuel = +this._fuel;
+    let reFuel = +this._fuel;
         
 		this.amountOfFuel += reFuel;
 		this._fuel = '';
