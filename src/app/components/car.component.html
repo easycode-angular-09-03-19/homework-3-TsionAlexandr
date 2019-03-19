@@ -1,0 +1,31 @@
+<div [className]="'title text-center'" >
+    <h1> Car name - {{ name }}</h1>
+</div>
+<div [className]="'container'">
+    <div [className]="'left'">
+        <h2>Параметры:</h2>
+        <p>Количество топлива: {{ amountOfFuel }} </p>
+        <p>Пробег: {{mileage}}</p>
+    </div>
+    <div [className]="'right'">
+        <h2>Характеристики автомобиля:</h2>
+        <ul> 
+            <li *ngFor="let item of this.carInfo">{{ item }}</li>
+        </ul>
+    </div>
+</div>
+<div [ngClass]="'mileage'">	
+    <input [className]="'input'" type="text" [(ngModel)]="_distance" [disabled]= "!amountOfFuel"> 
+    <button [className]="'btn'" (click)="drive(_distance)" [disabled]= "!amountOfFuel">Ехать</button>	
+</div>
+<div *ngIf="amountOfFuel <=0" [ngClass]="'fuel'">
+    <p [className]="'warning text-center'">Не хватает топлива!</p>
+</div>
+<div *ngIf="amountOfFuel <=0" [ngClass]="'fuel'">		
+    <input [className]="'input'" type="text" [(ngModel)]="_fuel">     
+    <button [className]="'btn btn-red'" (click)="refuel()">Заправиться</button>	
+</div>
+
+
+
+
